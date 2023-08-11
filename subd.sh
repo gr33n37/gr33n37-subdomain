@@ -31,7 +31,7 @@ mkdir -p $1/recon
 fi
 
 subdomain=$1
-assetfinder $subdomain >> $1/recon/sub.txt
+assetfinder $subdomain | httprobe >> $1/recon/sub.txt
 
 if [ -e $1/recon/sub.txt ]; then
 echo -e "\t\t\e[1;34mHarvesting hosts for the domains generated\e[0m\n\n"
